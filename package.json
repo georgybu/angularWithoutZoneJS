@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port=4300",
+    "build": "ng build --prod --aot --buildOptimizer=true --extractCss=true --extractLicenses=true --namedChunks=true --statsJson=true --vendorChunk=true",
+    "build-dev": "ng build --aot --statsJson --outputPath=./dist/myZone-dev",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "analyze-bundle": "webpack-bundle-analyzer ./dist/myZone-dev/stats.json"
   },
   "private": true,
   "dependencies": {
